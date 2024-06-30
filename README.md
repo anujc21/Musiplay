@@ -1,15 +1,17 @@
 # Musiplay
 
-## Live @ https://musiplay.pages.dev/
+## A music streaming application made using React and NodeJS.
 
-## Run Locally
+### Live @ https://musiplay.pages.dev/
 
-### Server
+### Run Locally
+
+#### Server
 
 #### 1. Run "npm install".
 #### 2. Run "node start server.js".
 
-### Client
+#### Client
 
 #### 1. Run "npm install".
 #### 2. Run "npm run dev".
