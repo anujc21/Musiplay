@@ -8,7 +8,7 @@ import Player from "./Player.jsx";
 import Playlists from "./Playlists.jsx";
 import "./App.css";
 
-const socket = io("https://musiplay-server.glitch.me");
+const socket = io("localhost:3000");
 
 function App(){
     const [loading, setLoading] = useState(true);
