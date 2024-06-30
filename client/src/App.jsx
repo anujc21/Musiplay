@@ -37,7 +37,9 @@ function App(){
         }
 
         socket.on("searchResult", (result) => {
-            setLoading(false);
+            if (loading){
+                setLoading(false);
+            }
 
             setAudios(result);
         });
