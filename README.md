@@ -1,6 +1,6 @@
 # Musiplay
 
-## A music streaming application made using React and NodeJS using YouTube Search and YouTube IFrame APIs.
+## A music streaming application made with React and NodeJS using YouTube Search and YouTube IFrame APIs.
 
 ### Live @ https://musiplay.pages.dev/
 
