@@ -185,7 +185,7 @@ function Player({currentAudio, setCurrentAudio, audios, searchInputRef, setPage,
 	};
 
 	const playlistOptionCards = playlists.map((playlist, index) => {
-		const inPlaylist = !(playlists[index].data.findIndex(audio => audio.id.videoId === currentAudio.id.videoId) === -1);
+		const inPlaylist = !(playlists[index].data.find(audio => audio.id.videoId === currentAudio.id.videoId) === -1);
 
 		return (
 			<div className={inPlaylist ? "playlistOptionRemove" : "playlistOption"} key={index} onClick={() => {playlistOptionClick(index)}}>
