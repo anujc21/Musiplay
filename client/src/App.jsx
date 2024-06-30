@@ -8,7 +8,7 @@ import Player from "./Player.jsx";
 import Playlists from "./Playlists.jsx";
 import "./App.css";
 
-const socket = io("localhost:3000");
+const socket = io("https://musiplay-server.glitch.me");
 
 function App(){
     const [loading, setLoading] = useState(true);
@@ -36,11 +36,9 @@ function App(){
             setPlaylists(JSON.parse(newPlaylists));
         }
 
-        socket.on("connect", () => {
-            setLoading(false);
-        });
-
         socket.on("searchResult", (result) => {
+            setLoading(false);
+
             setAudios(result);
         });
 
