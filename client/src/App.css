@@ -43,36 +43,36 @@ body{
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #ff3d9b;
     opacity: 0.3;
     transform: translate(-50%, -50%);
     z-index: 99;
-    animation: loaderMaxify 0.5s ease-in-out;
+    animation: loaderMaxify 0.4s ease-in-out;
 }
 
 .loader1Reverse{
-    animation: loaderMinify 0.5s ease-in-out;
+    animation: loaderMinify 0.4s ease-in-out;
 }
 
 .loader2{
     position: fixed;
     left: 50%;
     top: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background: #ff3d9b;
     opacity: 0.4;
     transform: translate(-50%, -50%);
     z-index: 99;
-    animation: loaderMinify 0.5s ease-in-out;
+    animation: loaderMinify 0.4s ease-in-out;
 }
 
 .loader2Reverse{
-    animation: loaderMaxify 0.5s ease-in-out;
+    animation: loaderMaxify 0.4s ease-in-out;
 }
 
 .notificationBox{
@@ -1421,22 +1421,22 @@ body{
 
 @keyframes loaderMaxify{
     from {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     to {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 }
 
 @keyframes loaderMinify{
     from {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
     to {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 }
