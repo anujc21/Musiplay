@@ -32,6 +32,10 @@ function Loader(){
 			<div className="loader1" ref={loader1Ref}></div>
 
 			<div className="loader2" ref={loader2Ref}></div>
+
+			<h1 className="loaderText">
+				Loading
+			</h1>
 		</div>
 	);
 }
