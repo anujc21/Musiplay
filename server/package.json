@@ -1,0 +1,16 @@
+{
+  "name": "musiplay",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "author": "anujc21",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "socket.io": "^4.7.5",
+    "youtube-search-without-api-key": "^2.0.1"
+  }
+}

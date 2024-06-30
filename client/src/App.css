@@ -1,0 +1,1442 @@
+@import "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    display: none;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ff6bc4;
+    border-radius: 10px;
+}
+
+*{
+    font-family: Nunito;
+    user-select: none;
+}
+
+html{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.loaderBox{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+}
+
+.loader1{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ff3d9b;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    animation: loaderMaxify 0.5s ease-in-out;
+}
+
+.loader1Reverse{
+    animation: loaderMinify 0.5s ease-in-out;
+}
+
+.loader2{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ff3d9b;
+    opacity: 0.4;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    animation: loaderMinify 0.5s ease-in-out;
+}
+
+.loader2Reverse{
+    animation: loaderMaxify 0.5s ease-in-out;
+}
+
+.notificationBox{
+    padding: 15px 30px;
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    animation: notificationOpen 0.2s ease-in-out;
+    background: linear-gradient(to bottom right, #ff3d9b, #ff6bc4);
+}
+
+.notificationBoxClose{
+    animation: notificationClose 0.2s ease-in-out;
+}
+
+.alertBoxContainer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alertBox{
+    padding: 50px;
+    position: fixed;
+    width: 400px;
+    max-width: 60%;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: alertOpen 0.5s cubic-bezier(0.68, -1.55, 0.27, 1.55);
+}
+
+.alertBoxClose{
+    animation: alertClose 0.5s cubic-bezier(0.68, -1.55, 0.27, 1.55);
+}
+
+.alertTitle{
+    margin: 0px;
+    text-align: center;
+    color: #ff6bc4;
+}
+
+.alertText{
+    margin: 30px 0px;
+    text-align: center;
+    font-size: 16px;   
+}
+
+.alertButton{
+    width: 150px;
+    height: 50px;
+    border-left: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #ff3d9b, #ff6bc4);
+    color: #fff;
+    font-weight: bold;
+}
+
+.alertButton:hover{
+    cursor: pointer;
+}
+
+.alertButton:active{
+    opacity: 0.7;
+}
+
+.app{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom right, #ff3d9b, #ff6bc4);
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.headerIcon{
+    margin: -3px 0px 0px 13px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.headerTitle{
+    margin: 0px 20px 0px -5px;
+    color: #fff;
+}
+
+.searchBox{
+    margin: -8px auto 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInputBox{
+    width: 500px;
+    height: 30px;
+}
+
+.searchInput{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: 3px solid #ffadd5;
+    border: 4px solid #ff8fc5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.searchInput:focus{
+    outline-width: 4px;
+    animation: inputFocus 0.2s ease-in-out;
+}
+
+.searchInput::placeholder{
+    color: #ccc;
+}
+
+.searchButton{
+    width: 0px;
+    height: 0px;
+    margin: 7px 0px 0px 20px;
+    padding: 20px;
+    background: #ff8fc5;
+    border: 4px solid #ffadd5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchButton:hover{
+    cursor: pointer;
+}
+
+.searchButton:active{
+    opacity: 0.7;
+}
+
+.searchButtonIcon{
+    color: #fff;
+    font-size: 20px;
+    font-variation-settings: "wght" 600;
+}
+
+.searchContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+}
+
+.searchBoxBig{
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom right, #ff3d9b, #ff6bc4);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInputBoxBig{
+    margin: -8px 20px 0px 8px;
+    width: 60%;
+    height: 30px;
+    animation: inputActive 0.2s ease-in-out;
+}
+
+.searchInputBig{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    outline: 3px solid #ffadd5;
+    border: 4px solid #ff8fc5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.searchInputBig:focus{
+    outline-width: 4px;
+    animation: inputFocus 0.2s ease-in-out;
+}
+
+.searchInputBig::placeholder{
+    color: #ccc;
+}
+
+.searchButtonBig{
+    margin: 0px 5px 0px 0px;
+    width: 0px;
+    height: 0px;
+    padding: 20px;
+    background: #ff8fc5;
+    border: 4px solid #ffadd5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchButtonBig:hover{
+    cursor: pointer;
+}
+
+.searchButtonBig:active{
+    opacity: 0.7;
+}
+
+.backButtonBig{
+    margin: 0px 0px 0px 4px;
+    width: 0px;
+    height: 0px;
+    padding: 20px;
+    background: #ff8fc5;
+    border: 4px solid #ffadd5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backButtonBig:hover{
+    cursor: pointer;
+}
+
+.backButtonBig:active{
+    opacity: 0.7;
+}
+
+.iconContainer{
+    margin: 0px 20px 0px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.searchMiniButton{
+    display: flex;
+    margin: 0px 10px 0px 0px;
+    width: 35px;
+    height: 35px;
+    background: #ff8fc5;
+    border: 4px solid #ffadd5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchMiniButton:hover{
+    cursor: pointer;
+}
+
+.searchMiniButton:active{
+    filter: brightness(1.2);
+}
+
+.searchMiniIcon{
+    font-size: 20px;
+    font-variation-settings: "wght" 600;
+}
+
+.homeMiniButton{
+    margin: 5px 15px 0px 0px;
+}
+
+.homeMiniButton:hover{
+    cursor: pointer;
+}
+
+.homeMiniButton:active{
+    opacity: 0.7;
+}
+
+.homeMiniIcon{
+    font-size: 27px;
+    font-variation-settings: "FILL" 1;
+}
+
+.menuMiniButton{
+    margin: 5px 0px 0px 0px;
+}
+
+.menuMiniButton:hover{
+    cursor: pointer;
+}
+
+.menuMiniButton:active{
+    opacity: 0.7;
+}
+
+.menuMiniIcon{
+    font-size: 30px;
+    font-variation-settings: "wght" 600;
+}
+
+.menuBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu{
+    padding: 5px;
+    margin: 0px 0px 0px auto;
+    width: 300px;
+    max-width: 90%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: menuOpen 0.2s ease-in-out;
+    overflow-y: auto;
+}
+
+.menuClosed{
+    animation: menuClose 0.2s ease-in-out;
+}
+
+.menuCloseButton{
+    padding: 0px;
+    margin: 5px 0px 0px auto;
+}
+
+.menuCloseButton:hover{
+    cursor: pointer;
+}
+
+.menuCloseButton:active{
+    color: #ddd;
+}
+
+.menuCloseIcon{
+    font-size: 30px;
+}
+
+.menuLogo{
+    margin: 20px 0px 10px 0px;
+    color: #ff6bc4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menuLogoIcon{
+    margin: -3px 0px 0px 0px;
+    font-size: 40px;
+}
+
+.menuLogoTitle{
+    margin: 0px 0px 0px -5px;
+}
+
+.menuButtonBox{
+    width: 100%;
+    height: auto;
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuButton{
+    padding: 10px;
+    margin: 5px 0px;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.menuButton:hover{
+    cursor: pointer;
+}
+
+.menuButton:active{
+    opacity: 0.5;
+}
+
+.menuButtonIcon{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff6bc4;
+    font-variation-settings: "FILL" 1;
+}
+
+.menuHomeIcon{
+    margin: -4px 0px 0px 0px;
+}
+
+.menuArtistsIcon{
+    margin: -2px 0px 0px 0px;
+}
+
+.menuTrendingIcon{
+    margin: -2px -2px 0px 0px;
+}
+
+.menuPlaylistIcon{
+    margin: -1px 0px 0px 0px;
+}
+
+.menuAboutIcon{
+    margin: -2px 0px 0px 0px;
+}
+
+.menuButtonText{
+    margin: 0px 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6bc4;
+}
+
+.menuFooter{
+    margin: auto 0px 0px 0px;
+    color: #ff6bc4;
+}
+
+.content{
+    width: 100%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.audioResultTitle{
+    margin: 0px 20px 20px 20px;
+    align-self: center;
+    color: #aaa;
+}
+
+.audios{
+    padding: 20px;
+    align-self: center;
+    width: 1200px;
+    max-width: 80%;
+    height: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow-y: auto;
+}
+
+.audio{
+    width: 350px;
+    height: 200px;
+    border: 5px solid #ff6bc4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+}
+
+.audio:hover{
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.audioPlayButtonBox{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.audioPlayButton{
+    margin: auto 0px 10px 0px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(to bottom right, #ff3d9b, #ff6bc4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.audioPlayButtonIcon{
+    font-size: 35px;
+    font-variation-settings: "FILL" 1;
+    color: #fff;
+}
+
+.audioTitleBox{
+    width: 100%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0px 0px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audioTitle{
+    margin: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    word-break: break-word;
+}
+
+.player{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerData{
+    margin: 50px 0px;
+    width: 400px;
+    max-width: 90%;
+    height: 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerThumbnailBox{
+    width: 100%;
+    height: 80%;
+    max-height: 400px;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.playerThumbnailBox::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.playerThumbnail{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.playerTitleBox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerTitle{
+    margin: 30px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+
+.playerButtons{
+    margin: 0px;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.playerUndoButton, .playerFavoriteButton{
+    margin: 0px 5px;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    background: #ff6bc4;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerUndoButton:hover, .playerFavoriteButton:hover{
+    cursor: pointer;
+}
+
+.playerUndoButton:active, .playerFavoriteButton:active{
+    opacity: 0.7;
+}
+
+.playerUndoButtonIcon{
+    color: #fff;
+    font-size: 23px;
+    font-variation-settings: "FILL" 1;
+}
+
+.playerFavoriteButtonIcon{
+    color: #fff;
+    font-size: 20px;
+    font-variation-settings: "FILL" 1;
+}
+
+.playlistOptionsContainer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.playlistOptionsBox{
+    width: 400px;
+    max-width: 90%;
+    height: 400px;
+    max-height: 90%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    animation: playlistOptionsBoxOpen 0.2s ease-in-out;
+}
+
+.playlistOptionsBoxClosed{
+    animation: playlistOptionsBoxClose 0.2s ease-in-out;
+}
+
+.playlistOptions{
+    width: 80%;
+    height: 55%;
+    border: 5px solid #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlistOptionsWrapper{
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.playlistOption, .playlistOptionRemove{
+    margin: 5px 0px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 15px;
+    word-break: break-word;
+    width: 70%;
+    height: auto;
+    min-height: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlistOption:hover, .playlistOptionRemove:hover{
+    cursor: pointer;
+}
+
+.playlistOption:active, .playlistOptionRemove:active{
+    opacity: 0.5;
+}
+
+.playlistOptionRemove{
+    color: #fff;
+    background: #ff6bc4;
+}
+
+.playlistOptionsCancelButton{
+    margin: 20px 5px;
+    width: 100px;
+    min-width: 100px;
+    height: 40px;
+    min-height: 40px;
+    background: #ff6bc4;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.playlistOptionsCancelButton:hover{
+    cursor: pointer;
+}
+
+.playlistOptionsCancelButton:active{
+    opacity: 0.7;
+}
+
+.playerControls{
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+}
+
+.playerProgress{
+    margin: 0px 0px 0px auto;
+    width: 100%;
+    height: 15px;
+    box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+}
+
+.playerProgress:hover{
+    cursor: pointer;
+}
+
+.playerProgressBar{
+    width: 1%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    background: #ff3d9b;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.playerButtonBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playerPlayButton, .playerForwardButton, .playerBackButton, .playerPlaybackButton, .playerNextButton{
+    margin: 15px 0px 0px 0px;
+    width: 70px;
+    height: 70px;
+    background: #ff3d9b;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerPlayButton:hover, .playerForwardButton:hover, .playerBackButton:hover, .playerPlaybackButton:hover, .playerNextButton:hover{
+    cursor: pointer;
+}
+
+.playerPlayButton:active, .playerForwardButton:active, .playerBackButton:active, .playerPlaybackButton:active, .playerNextButton:active{
+    opacity: 0.7;
+}
+
+.playerPlayButtonIcon, .playerForwardButtonIcon, .playerBackButtonIcon, .playerPlaybackButtonIcon, .playerNextButtonIcon{
+    color: #fff;
+    font-size: 30px;
+    font-variation-settings: "FILL" 1;
+}
+
+.playerForwardButton, .playerNextButton{
+    margin: 15px 0px 0px 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.playerBackButton, .playerPlaybackButton{
+    margin: 15px 5px 0px 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.playerForwardButtonIcon, .playerNextButtonIcon{
+    font-size: 25px;
+}
+
+.playerPlaybackShuffleButtonIcon{
+    font-size: 22px;
+}
+
+.playerPlaybackRepeatButtonIcon{
+    font-size: 21px;
+}
+
+.playerPlaybackStopButtonIcon{
+    font-size: 22px;
+}
+
+.playlists{
+    padding: 20px;
+    align-self: center;
+    width: 1200px;
+    max-width: 80%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow-y: auto;
+}
+
+.playlistAddButton{
+    width: 350px;
+    height: 200px;
+    border: 5px solid #ff3d9b;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff3d9b;
+}
+
+.playlistAddButton:hover{
+    cursor: pointer;
+}
+
+.playlistAddButton:active{
+    opacity: 0.7;
+}
+
+.playlistIcon{
+    margin: 60px 0px 0px 0px;
+    color: #fff;
+    font-size: 40px;
+}
+
+.playlistText{
+    text-align: center;
+    margin: 10px 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.playlistNameContainer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.playlistNameBox{
+    width: 400px;
+    max-width: 90%;
+    height: 210px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlistNameTitle{
+    margin: 30px 0px 20px 0px;
+    color: #ff6bc4;
+}
+
+.playlistInputBox{
+    width: 200px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlistNameInput{
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid #ff6bc4;
+    font-size: 16px;
+}
+
+.playlistNameInput:focus{
+    border-width: 4px;
+    animation: miniInputAnimation 0.2s ease-in-out;
+}
+
+.playlistNameInput::placeholder{
+    color: #ccc;
+}
+
+.playlistButtons{
+    margin: 30px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlistNameButton, .playlistNameCancelButton{
+    margin: 0px 5px;
+    width: 100px;
+    height: 40px;
+    background: #ff6bc4;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.playlistNameButton:hover, .playlistNameCancelButton:hover{
+    cursor: pointer;
+}
+
+.playlistNameButton:active, .playlistNameCancelButton:active{
+    opacity: 0.7;
+}
+
+.playlist{
+    width: 350px;
+    height: 200px;
+    border: 5px solid #ff6bc4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff6bc4;
+}
+
+.playlist:hover{
+    cursor: pointer;
+}
+
+.playlist:active{
+    opacity: 0.7;
+}
+
+.upNext{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.2);
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(0, -50%);
+    animation: upNextOpen 0.2s ease-in-out;
+}
+
+.upNextClosed{
+    height: 60px;
+    transform: translate(-250px, -50%);
+    animation: upNextClose 0.2s ease-in-out;
+}
+
+.upNextHeader{
+    margin: 15px 0px 5px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.upNextTitle{
+    margin: 0px 0px 0px 15px;
+    color: #ff6bc4;
+}
+
+.upNextButton{
+    margin: -5px 15px 0px auto;
+    width: 30px;
+    height: 30px;
+    background: #ff6bc4;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.upNextButton:hover{
+    cursor: pointer;
+}
+
+.upNextButton:active{
+    opacity: 0.7;
+}
+
+.upNextButtonIcon{
+    color: #fff;
+    font-size: 20px;
+}
+
+.upNextSongBox{
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: upNextSongBoxOpen 0.2s ease-in-out;
+}
+
+.upNextSongBoxClosed{
+    opacity: 0;
+    animation: upNextSongBoxClose 0.2s ease-in-out;
+}
+
+.upNextThumbnailBox{
+    margin: 0px 0px 0px 20px;
+    width: 80px;
+    min-width: 80px;
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.upNextTumbnail{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.upNextSongTitle{
+    margin: 0px 30px 0px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.upNextPlaylist{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 0px 20px 0px;
+    opacity: 1;
+    color: #ff6bc4;
+    animation: upNextSongBoxOpen 0.2s ease-in-out;
+}
+
+.upNextPlaylistClosed{
+    opacity: 0;
+    animation: upNextSongBoxClose 0.2s ease-in-out;
+}
+
+@media screen and (max-height: 600px){
+    .playerData{
+        width: 70%;
+        margin: 20px 0px;
+        flex-direction: row;
+    }
+
+    .playerThumbnailBox{
+        width: 30%;
+        height: 80%;
+    }
+
+    .playerTitleBox{
+        width: 60%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .playerButtons{
+        width: 10%;
+        height: 100%;
+        flex-direction: column;
+        align-items: normal;
+        justify-content: center;
+    }
+
+    .playerUndoButton, .playerFavoriteButton{
+        margin: 5px 0px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .searchBox{
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .searchBox{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .homeMiniButton{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .searchMiniButton{
+        display: none;
+    }
+}
+
+@keyframes inputActive{
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes inputFocus{
+    from {
+        outline-width: 0;
+    }
+    to {
+        outline-width: 4px;
+    }
+}
+
+@keyframes miniInputAnimation{
+    from {
+        border-width: 0;
+    }
+    to {
+        border-width: 4px;
+    }
+}
+
+@keyframes menuOpen{
+    from {
+        transform: translate(100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes menuClose{
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100%, 0);
+    }
+}
+
+@keyframes upNextOpen{
+    from {
+        transform: translate(-250px, -50%);
+        height: 70px;
+    }
+    to {
+        transform: translate(0, -50%);
+        height: 200px;
+    }
+}
+
+@keyframes upNextClose{
+    from {
+        transform: translate(0, -50%);
+        height: 200px;
+    }
+    to {
+        transform: translate(-250px, -50%);
+        height: 70px;
+    }
+}
+
+@keyframes upNextSongBoxOpen{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes upNextSongBoxClose{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes playlistOptionsBoxOpen{
+    from {
+        transform: translate(0, 100%);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes playlistOptionsBoxClose{
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 100%);
+    }
+}
+
+@keyframes notificationOpen{
+    from{
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to{
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes notificationClose{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes alertOpen{
+    from{
+        transform: translate(0, -100%);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes alertClose{
+    from{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    to{
+        transform: translate(0, -100%);
+        opacity: 0;
+    }
+}
+
+@keyframes loaderMaxify{
+    from {
+        width: 100px;
+        height: 100px;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@keyframes loaderMinify{
+    from {
+        width: 200px;
+        height: 200px;
+    }
+    to {
+        width: 100px;
+        height: 100px;
+    }
+}
